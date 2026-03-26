@@ -1,7 +1,25 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
 ---
 
 <Layout title="Projects — Zhang">
-  <h1 style="padding: 4rem 3rem; font-family: Georgia, serif; font-weight: 300;">Projects</h1>
+  <section style="padding: 4rem 3rem 0;">
+    <p style="font-size: 11px; color: #9b9690; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.75rem;">
+      Projects
+    </p>
+    <h1 style="font-family: Georgia, serif; font-weight: 300; font-size: 2rem; color: #1a1a1a; margin: 0 0 0.5rem;">
+      Selected Work
+    </h1>
+    <p style="font-size: 13px; color: #6b6b6b; margin: 0;">
+      AI systems and full-stack applications.
+    </p>
+  </section>
+
+  <section style="padding: 1rem 3rem 4rem; max-width: 800px;">
+    {projects.map((project, i) => (
+      <ProjectCard project={project} index={i} />
+    ))}
+  </section>
 </Layout>
