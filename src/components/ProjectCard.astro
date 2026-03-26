@@ -11,7 +11,7 @@ const { project, index } = Astro.props;
 
 <div style="padding: 1.75rem 0; border-bottom: 0.5px solid #d8d4ce; display: flex; gap: 1.5rem;">
   <!-- Row number -->
-  <span style="font-family: Georgia, serif; font-size: 11px; color: #b5b0aa; min-width: 1.5rem; padding-top: 3px;">
+  <span style="font-family: Palatino, 'Palatino Linotype', serif; font-size: 11px; color: #c5c0ba; min-width: 20px; padding-top: 3px; flex-shrink: 0;">
     {String(index + 1).padStart(2, '0')}
   </span>
 
@@ -26,7 +26,7 @@ const { project, index } = Astro.props;
       >
         {project.title}
       </a>
-      <span style="color: #D97706; font-size: 16px;">↗</span>
+      <span style="color: #D97706; font-size: 16px; flex-shrink: 0;">↗</span>
     </div>
 
     <!-- Description -->
