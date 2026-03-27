@@ -2,18 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Zhang — Portfolio">
+<Layout title="Joe Zhang — AI Engineer">
   <!-- Hero -->
   <section style="padding: 5rem 3rem 4rem; max-width: 640px;">
     <p style="font-size: 11px; color: #9b9690; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 1.5rem;">
-      AI / Backend Engineer
+      Open to opportunities · Sydney, AU
     </p>
-    <h1 style="font-family: Palatino, 'Palatino Linotype', serif; font-weight: 300; font-size: 56px; line-height: 1.08; letter-spacing: -0.01em; color: #1a1a1a; margin: 0 0 1.25rem;">
-      Zhang
+    <h1 style="font-family: Palatino, 'Palatino Linotype', serif; font-weight: 300; font-size: 56px; line-height: 1.08; letter-spacing: -0.01em; color: #1a1a1a; margin: 0 0 0.5rem;">
+      Joe Zhang
     </h1>
-    <p style="font-size: 15px; color: #6b6b6b; line-height: 1.8; margin: 0 0 2rem;">
-      I build AI-powered systems — RAG pipelines, autonomous agents, and full-stack
-      applications. Currently seeking graduate roles in Australia.
+    <p style="font-size: 15px; color: #D97706; margin: 0 0 1.5rem; font-style: italic;">
+      AI Engineer · GenAI · RAG Systems · Multi-Agent Pipelines
+    </p>
+    <p style="font-size: 15px; color: #6b6b6b; line-height: 1.8; margin: 0 0 2.5rem;">
+      I build production-grade AI systems that go beyond prototypes — from 8-node LangGraph pipelines
+      with quantified evaluation to 4-agent automation with full CI/CD deployment.
+      UNSW M.I.T. (Data Science &amp; Engineering).
     </p>
     <div style="display: flex; gap: 2rem; align-items: center;">
       <a
@@ -33,17 +37,98 @@ import Layout from '../layouts/Layout.astro';
 
   <div style="height: 0.5px; background: #d8d4ce; margin: 0 3rem;"></div>
 
-  <!-- Tech stack -->
+  <!-- Tech Stack -->
   <section style="padding: 2.5rem 3rem;">
     <p style="font-size: 11px; color: #9b9690; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 1.25rem;">
       Core Stack
     </p>
     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-      {['Python', 'LangGraph', 'FastAPI', 'Next.js', 'RAG', 'PostgreSQL', 'Docker', 'GitHub Actions'].map(tech => (
+      {['Python', 'LangGraph', 'FastAPI', 'RAG', 'Multi-Agent', 'Next.js', 'Docker', 'GitHub Actions', 'FAISS', 'PostgreSQL'].map(tech => (
         <span style="background: #e4e0da; color: #9b9690; font-size: 11px; padding: 3px 8px;">
           {tech}
         </span>
       ))}
+    </div>
+  </section>
+
+  <div style="height: 0.5px; background: #d8d4ce; margin: 0 3rem;"></div>
+
+  <!-- Skills -->
+  <section style="padding: 2.5rem 3rem;">
+    <p style="font-size: 11px; color: #9b9690; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 1.5rem;">
+      Capabilities
+    </p>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+      <div>
+        <p style="font-size: 13px; font-weight: 500; color: #1a1a1a; margin: 0 0 0.75rem;">AI / LLM</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px;">
+          {['LangGraph / LangChain', 'RAG Architectures', 'HyDE · CRAG · Reranking', 'RAGAS Evaluation', 'Prompt Engineering', 'OpenAI · Anthropic · Gemini'].map(item => (
+            <li style="font-size: 13px; color: #6b6b6b;">{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p style="font-size: 13px; font-weight: 500; color: #1a1a1a; margin: 0 0 0.75rem;">Backend</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px;">
+          {['Python / FastAPI', 'Multi-Agent Systems', 'Docker / Compose', 'REST API Design', 'APScheduler', 'PostgreSQL · SQLite'].map(item => (
+            <li style="font-size: 13px; color: #6b6b6b;">{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p style="font-size: 13px; font-weight: 500; color: #1a1a1a; margin: 0 0 0.75rem;">MLOps / Cloud</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px;">
+          {['GitHub Actions CI/CD', 'Azure AI Foundry', 'VPS · Ubuntu · Nginx', 'FAISS · Embeddings', 'Azure AI Engineer Cert.'].map(item => (
+            <li style="font-size: 13px; color: #6b6b6b;">{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p style="font-size: 13px; font-weight: 500; color: #1a1a1a; margin: 0 0 0.75rem;">Frontend</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px;">
+          {['Next.js / React', 'TypeScript', 'Tailwind CSS', 'Playwright', 'Astro'].map(item => (
+            <li style="font-size: 13px; color: #6b6b6b;">{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div style="height: 0.5px; background: #d8d4ce; margin: 0 3rem;"></div>
+
+  <!-- About -->
+  <section style="padding: 2.5rem 3rem;">
+    <p style="font-size: 11px; color: #9b9690; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 1.5rem;">
+      Background
+    </p>
+    <div style="max-width: 640px;">
+      <p style="font-size: 15px; color: #6b6b6b; line-height: 1.8; margin: 0 0 1rem;">
+        I'm a recent UNSW graduate focused on <strong style="color: #1a1a1a; font-weight: 500;">production-grade AI engineering</strong> —
+        specifically the hard parts: retrieval quality, agent coordination, evaluation pipelines, and reliable deployment.
+        My background in Data Science &amp; Engineering shaped how I approach systems: as interconnected components with measurable behaviour.
+      </p>
+      <p style="font-size: 15px; color: #6b6b6b; line-height: 1.8; margin: 0 0 2rem;">
+        I built the Jobseeking Agent not as a portfolio piece, but because I genuinely needed it.
+        That's where the best engineering comes from — <strong style="color: #1a1a1a; font-weight: 500;">real constraints, real stakes</strong>.
+      </p>
+
+      <!-- Timeline -->
+      <div style="display: flex; flex-direction: column;">
+        {[
+          { year: '2025', role: 'UNSW — M.I.T. Graduated', org: 'Data Science & Engineering · WAM 76 · Sydney' },
+          { year: '2024', role: 'UNSW Open Day RAG Chatbot', org: 'Capstone · Scrum Master · LangGraph pipeline' },
+          { year: '2024', role: 'ACS Professional Year', org: 'QIBA · Software Development stream' },
+          { year: '2021–22', role: 'Tongji University — ICV Lab', org: 'Intelligent Connected Vehicle · Data Pipelines · Shanghai' },
+        ].map(item => (
+          <div style="display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; padding: 1rem 0; border-top: 0.5px solid #d8d4ce;">
+            <span style="font-size: 13px; font-weight: 500; color: #D97706; padding-top: 2px;">{item.year}</span>
+            <div>
+              <div style="font-size: 14px; font-weight: 500; color: #1a1a1a; margin-bottom: 2px;">{item.role}</div>
+              <div style="font-size: 13px; color: #9b9690;">{item.org}</div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 </Layout>
