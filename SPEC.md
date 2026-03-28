@@ -1,10 +1,12 @@
 # Portfolio Website — SPEC.md
 
 ## Project Overview
+
 Personal portfolio website targeting Australian recruiters.
 Showcases projects and technical understanding via a blog.
 
 ## Tech Stack
+
 - Framework: Astro 6.0.8
 - Styling: Tailwind CSS 4 (via @tailwindcss/vite)
 - Content: Markdown (Astro Content Collections)
@@ -14,6 +16,7 @@ Showcases projects and technical understanding via a blog.
 ## UI Design Spec
 
 ### Color
+
 - Background: `#F0EDE8` (warm gray)
 - Primary text: `#1a1a1a`
 - Secondary text: `#6b6b6b`
@@ -23,6 +26,7 @@ Showcases projects and technical understanding via a blog.
 - Divider: `#d8d4ce`
 
 ### Typography
+
 - Headings + name: `Palatino, 'Palatino Linotype', serif`, font-weight 300
 - Body / UI: sans-serif, font-weight 400 / 500
 - H1: 56px, line-height 1.08, letter-spacing -0.01em
@@ -31,11 +35,13 @@ Showcases projects and technical understanding via a blog.
 - Labels: 11px, uppercase, letter-spacing 0.1em
 
 ### CTA
+
 - Primary: amber text + `→`, `border-bottom: 1.5px solid #D97706`, color `#D97706`
 - Secondary: plain text link, color `#9b9690`, no underline
 - No filled or bordered button shapes
 
 ### Layout
+
 - Max content width: `900px`, centered
 - Hero content max-width: `640px`
 - Padding: `1.75rem 3rem` (nav), `5rem 3rem 4rem` (hero), `2.5rem 3rem` (sections)
@@ -43,6 +49,7 @@ Showcases projects and technical understanding via a blog.
 - Section label: 11px, uppercase, letter-spacing 0.1em, color `#9b9690`
 
 ### Project Rows
+
 - Layout: flex row, gap 1.5rem
 - Number: Palatino serif, 11px, color `#c5c0ba`, min-width 20px
 - Title: 15px, font-weight 500, color `#1a1a1a`
@@ -52,6 +59,7 @@ Showcases projects and technical understanding via a blog.
 - Row divider: `0.5px solid #d8d4ce`
 
 ### Do Not
+
 - No dark filled buttons
 - No gradient, shadow, or blur
 - No card grid for projects
@@ -59,6 +67,7 @@ Showcases projects and technical understanding via a blog.
 - No Google Fonts — use Palatino system font stack
 
 ## Rejected Approaches
+
 - `@astrojs/tailwind` integration: deprecated, do not use
 - Web-based blog publishing: not supported in static site
 - Headless CMS: unnecessary external dependency
@@ -70,9 +79,11 @@ Showcases projects and technical understanding via a blog.
 ## Module 1: Project Setup — status: [ ] TODO
 
 ### Description
+
 Initialize Astro project with Tailwind and configure GitHub Pages deployment.
 
 ### Task Breakdown
+
 - [ ] TASK-01: Initialize Astro project with minimal template
   - Input: empty directory
   - Output: working Astro project
@@ -95,6 +106,7 @@ Initialize Astro project with Tailwind and configure GitHub Pages deployment.
     - Then: site is accessible at GitHub Pages URL
 
 ### External Dependencies
+
 - [x] Astro: 6.0.8
 - [x] Node: >= 22
 - [x] Tailwind integration: @tailwindcss/vite (Tailwind 4)
@@ -107,9 +119,11 @@ Initialize Astro project with Tailwind and configure GitHub Pages deployment.
 ## Module 2: Site Layout — status: [ ] TODO
 
 ### Description
+
 Global layout component shared across all pages.
 
 ### Task Breakdown
+
 - [ ] TASK-01: Create base Layout.astro component
   - Output: Layout with <head>, nav, <slot />, footer
   - Constraint: import global.css here (single import point)
@@ -130,9 +144,11 @@ Global layout component shared across all pages.
 ## Module 3: Home Page — status: [ ] TODO
 
 ### Description
+
 Landing page. First impression for recruiters.
 
 ### Task Breakdown
+
 - [ ] TASK-01: Hero section
   - Content: name, one-line role description, brief positioning statement
   - AC: visitor understands who you are and what you do within 5 seconds
@@ -149,9 +165,11 @@ Landing page. First impression for recruiters.
 ## Module 4: Projects Page — status: [ ] TODO
 
 ### Description
+
 Portfolio showcase. Hardcoded project data.
 
 ### Task Breakdown
+
 - [ ] TASK-01: Define project data structure
   - Fields: title, description, techStack[], githubUrl, (optional) demoUrl
   - Location: src/data/projects.ts
@@ -165,6 +183,7 @@ Portfolio showcase. Hardcoded project data.
   - AC: all project cards render without error
 
 ### Project Data (hardcoded)
+
 ```
 Project 1:
   title: UNSW Open Day RAG Chatbot
@@ -188,9 +207,11 @@ Project 2:
 ## Module 5: Blog — status: [ ] TODO
 
 ### Description
+
 Technical blog. Markdown-based authoring, statically generated.
 
 ### Task Breakdown
+
 - [ ] TASK-01: Configure Astro Content Collections for blog posts
   - Location: src/content/blog/
   - Schema fields: title, date, description, (optional) tags
@@ -207,19 +228,25 @@ Technical blog. Markdown-based authoring, statically generated.
     - Markdown renders correctly (headings, code blocks, links)
     - Title and date displayed
 
-- [ ] TASK-04: First blog post (draft)
+- [x] TASK-04: First blog post (draft)
   - Title: "Building a Human-AI Development Workflow"
   - Content: summary of today's workflow discussion
   - Note: content written by human, TASK is to create the file scaffold only
+
+- [x] TASK-05: Fix Markdown rendering — paragraph spacing
+  - Install `@tailwindcss/typography`
+  - Add `@plugin "@tailwindcss/typography"` to global.css
+  - Wrap blog detail page slot in `<article class="prose prose-stone max-w-none">`
+  - Verified: rendering correct
 
 ---
 
 ## Verification Strategy (per module)
 
-| Module | Human can verify | Requires AI explanation | External tooling |
-|--------|-----------------|------------------------|-----------------|
-| Setup | GitHub Pages URL loads | Tailwind config correctness | GitHub Actions log |
-| Layout | Visual check, nav links | - | - |
-| Home | Content accuracy | - | - |
-| Projects | Cards render, links work | Data structure extensibility | - |
-| Blog | New .md appears in list, renders correctly | Content Collections config | - |
+| Module   | Human can verify                           | Requires AI explanation      | External tooling   |
+| -------- | ------------------------------------------ | ---------------------------- | ------------------ |
+| Setup    | GitHub Pages URL loads                     | Tailwind config correctness  | GitHub Actions log |
+| Layout   | Visual check, nav links                    | -                            | -                  |
+| Home     | Content accuracy                           | -                            | -                  |
+| Projects | Cards render, links work                   | Data structure extensibility | -                  |
+| Blog     | New .md appears in list, renders correctly | Content Collections config   | -                  |
