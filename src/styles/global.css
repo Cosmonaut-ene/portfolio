@@ -1,1 +1,71 @@
 @import "tailwindcss";
+
+.prose p {
+  margin-bottom: 1.25rem;
+}
+
+.prose h2 {
+  font-family: Palatino, 'Palatino Linotype', serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  margin: 2rem 0 0.75rem;
+}
+
+.prose h3 {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #1a1a1a;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose li {
+  margin-bottom: 0.4rem;
+}
+
+.prose strong {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.prose code {
+  font-size: 13px;
+  background: #e4e0da;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.prose pre {
+  background: #1a1a1a;
+  color: #f0ede8;
+  padding: 1.25rem 1.5rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.prose hr {
+  border: none;
+  border-top: 0.5px solid #d8d4ce;
+  margin: 2rem 0;
+}

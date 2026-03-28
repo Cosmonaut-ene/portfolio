@@ -5,8 +5,6 @@ description: "How I structured a SPEC-driven development process with AI as an e
 tags: ["AI", "workflow", "development"]
 ---
 
-<!-- Content to be written by author -->
-
 Most developers using AI coding tools fall into one of two traps: either they treat AI as a glorified autocomplete, or they hand over too much control and lose track of their own project. I spent a day designing a workflow that avoids both — here's what I learned.
 
 ## Situation
@@ -93,3 +91,55 @@ AI is not a junior developer you can hand a ticket to. It's closer to a very fas
 The workflow isn't about constraining AI. It's about giving yourself enough structure to stay in control while AI moves fast.
 
 ---
+
+## Appendix: Skill Files
+
+These two slash commands are the most immediately useful artifacts from this workflow. Drop them into `~/.claude/skills/` to use across all your projects.
+
+### `/commit`
+
+```markdown
+---
+name: commit
+description: Git commit following project conventions. Use when committing completed work.
+command: /commit
+disable-model-invocation: true
+allowed-tools: Bash(git diff:*), Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git push:*)
+---
+
+1. Run `git status` to check current state
+2. Run `git diff --staged` to review what is staged
+   - If nothing staged, show `git status` and ask human which files to stage
+   - Do not run `git add` without confirmation
+3. Ask human: which SPEC Task does this commit correspond to?
+4. Write commit message: `feat(<module>): [TASK-XX] <description>`
+   - Use `fix` for bug fixes, `docs` for documentation, `chore` for tooling
+5. Show the commit message for human confirmation before committing
+6. Commit after confirmation
+7. Ask: push only, or create PR?
+```
+
+### `/pr`
+
+```markdown
+---
+name: pr
+description: Create a pull request following project conventions. Use after commits are ready for review.
+command: /pr
+disable-model-invocation: true
+allowed-tools: Bash(git:*), Bash(gh:*)
+---
+
+1. Verify `gh auth status` — if not authenticated, stop and report
+2. Confirm current branch is not `main` — if on main, stop and report
+3. Run `git log main..HEAD --oneline` to review commits in this PR
+4. Draft PR description:
+   - What was done
+   - Scope of impact
+   - Key implementation decisions
+   - Points requiring human review
+5. Show PR description for human confirmation before creating
+6. Run `gh pr create` with confirmed description
+7. Output PR link
+8. Remind human: do not start next feature until this PR is merged
+```
